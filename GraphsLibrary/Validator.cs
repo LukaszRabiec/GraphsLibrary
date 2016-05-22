@@ -85,7 +85,6 @@ namespace GraphsLibrary
             }
         }
 
-        //TODO: Test this
         public static bool AreNeighbours(int vertice, int neighbour, int[,] adjacencyMatrix)
         {
             return adjacencyMatrix[vertice, neighbour] == 1;

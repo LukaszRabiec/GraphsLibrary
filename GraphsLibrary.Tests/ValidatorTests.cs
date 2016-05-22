@@ -139,5 +139,21 @@ namespace GraphsLibrary.Tests
 
             validatingCorrectlyDirectedGraph.ShouldNotThrow<ArgumentException>();
         }
+
+        [Fact]
+        public void CheckingIfVerticesAreNotNeighboursShouldReturnFalse()
+        {
+            var graph = new Graph(_dirPath + "v1GraphWithEulerCycle.json");
+
+            Validator.AreNeighbours(0, 2, graph.AdjacencyMatrix).Should().BeFalse();
+        }
+
+        [Fact]
+        public void CheckingIfVerticesAreNeighboursShouldReturnTrue()
+        {
+            var graph = new Graph(_dirPath + "v1GraphWithEulerCycle.json");
+
+            Validator.AreNeighbours(0, 1, graph.AdjacencyMatrix).Should().BeTrue();
+        }
     }
 }
