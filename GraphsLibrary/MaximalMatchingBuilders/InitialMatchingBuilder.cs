@@ -12,6 +12,7 @@ namespace GraphsLibrary.MaximalMatchingBuilders
 
         public InitialMatchingBuilder(Graph graph)
         {
+            Validator.ValidateIfSquareMatrix(graph.AdjacencyMatrix);
             Validator.ValidateUndirectedGraphAdjacency(graph);
             _adjacencyMatrixCopy = graph.AdjacencyMatrixCopy;
             _freeVertices = MMC.CreateFreeVerticesList(graph.AdjacencyMatrix);

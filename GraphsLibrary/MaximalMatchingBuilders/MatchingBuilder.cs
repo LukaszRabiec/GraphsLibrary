@@ -14,6 +14,7 @@ namespace GraphsLibrary.MaximalMatchingBuilders
 
         public MatchingBuilder(Graph startingGraph, List<Tuple<int, int>> path, List<Tuple<int, int>> matchedVertices)
         {
+            Validator.ValidateIfSquareMatrix(startingGraph.AdjacencyMatrix);
             Validator.ValidateUndirectedGraphAdjacency(startingGraph);
             _startingAdjacencyMatrixCopy = startingGraph.AdjacencyMatrixCopy;
             _path = new List<Tuple<int, int>>(path);

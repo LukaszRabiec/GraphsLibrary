@@ -11,6 +11,7 @@ namespace GraphsLibrary.MaximalMatchingBuilders
 
         public ExtensionPathBuilder(Graph graph)
         {
+            Validator.ValidateIfSquareMatrix(graph.AdjacencyMatrix);
             Validator.ValidateIfGraphIsCorrectlyDirected(graph);
             _adjacencyMatrixCopy = graph.AdjacencyMatrixCopy;
             _freeVertices = graph.FreeVertices;

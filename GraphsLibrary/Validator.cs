@@ -4,6 +4,14 @@ namespace GraphsLibrary
 {
     public static class Validator
     {
+        public static void ValidateIfSquareMatrix(int[,] matrix)
+        {
+            if (matrix.GetLength(0) != matrix.GetLength(1))
+            {
+                throw new ArgumentException("Graph's matrix isn't square.");
+            }
+        }
+
         public static void ValidateUndirectedGraphAdjacency(Graph graph)
         {
             var matrix = graph.AdjacencyMatrix;

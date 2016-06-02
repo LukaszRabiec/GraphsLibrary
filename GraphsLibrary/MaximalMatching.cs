@@ -12,6 +12,7 @@ namespace GraphsLibrary
 
         public MaximalMatching(Graph graph)
         {
+            Validator.ValidateIfSquareMatrix(graph.AdjacencyMatrix);
             _graph = graph;
             _freeVertices = new List<int>();
         }

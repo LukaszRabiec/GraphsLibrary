@@ -7,6 +7,7 @@
 
         public DirectedGraphBuilder(Graph graph)
         {
+            Validator.ValidateIfSquareMatrix(graph.AdjacencyMatrix);
             Validator.ValidateUndirectedGraphAdjacency(graph);
             Validator.ValidateIfGraphIsCorrectlyMatched(graph);
             _adjacencyMatrixCopy = graph.AdjacencyMatrixCopy;

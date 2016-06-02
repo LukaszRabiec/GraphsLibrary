@@ -46,6 +46,11 @@
   <ItemGroup>
     <Compile Include="Euler.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="HungarianAlgorithm.cs" />
+    <Compile Include="HungarianAlgorithmHelpers\Coverer.cs" />
+    <Compile Include="HungarianAlgorithmHelpers\Reducer.cs" />
+    <Compile Include="HungarianAlgorithmHelpers\Cost.cs" />
+    <Compile Include="HungarianAlgorithmHelpers\CostFinder.cs" />
     <Compile Include="MaximalMatching.cs" />
     <Compile Include="MaximalMatchingBuilders\DirectedGraphBuilder.cs" />
     <Compile Include="MaximalMatchingBuilders\InitialMatchingBuilder.cs" />

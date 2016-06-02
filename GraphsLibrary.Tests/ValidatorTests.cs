@@ -9,6 +9,32 @@ namespace GraphsLibrary.Tests
         private string _dirPath = "ValidatorGraphsData/";
 
         [Fact]
+        public void NotSquareMatrixShouldThrowArgumentException()
+        {
+            var notSquareMatrix = new int[2, 3];
+
+            Action validatingNotSquareMatrix = () =>
+            {
+                Validator.ValidateIfSquareMatrix(notSquareMatrix);
+            };
+
+            validatingNotSquareMatrix.ShouldThrow<ArgumentException>();
+        }
+
+        [Fact]
+        public void SquareMatrixShouldNotThrowArgumentException()
+        {
+            var notSquareMatrix = new int[2, 2];
+
+            Action validatingSquareMatrix = () =>
+            {
+                Validator.ValidateIfSquareMatrix(notSquareMatrix);
+            };
+
+            validatingSquareMatrix.ShouldNotThrow<ArgumentException>();
+        }
+
+        [Fact]
         public void UndirectedGraphWhichIsUnsymmetricalShouldThrowArgumentException()
         {
             var graph = new Graph(_dirPath + "v1UndirectedGraphWhichIsUnsymmetrical.json");
