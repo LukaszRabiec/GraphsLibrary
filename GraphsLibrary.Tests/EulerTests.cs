@@ -22,6 +22,7 @@ namespace GraphsLibrary.Tests
             var cycle = euler.FindEulerCycle(0);
 
             cycle.Should().BeEquivalentTo(new Queue<int>(new[] { 0, 1, 2, 3, 4, 2, 0 }));
+            PrintCycle(cycle);
         }
 
         [Fact]
@@ -31,6 +32,15 @@ namespace GraphsLibrary.Tests
             var cycle = euler.FindEulerCycle(0);
 
             cycle.Should().BeEquivalentTo(new Queue<int>(new[] { 0, 1, 2, 3, 4, 0 }));
+            PrintCycle(cycle);
+        }
+
+        private void PrintCycle(Queue<int> cycle)
+        {
+            foreach (var index in cycle)
+            {
+                _output.WriteLine(index.ToString());
+            }
         }
     }
 }
