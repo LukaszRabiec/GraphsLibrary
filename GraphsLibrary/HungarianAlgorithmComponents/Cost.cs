@@ -1,19 +1,14 @@
 ﻿using System;
+using GraphsLibrary.Utility;
 
 namespace GraphsLibrary.HungarianAlgorithmComponents
 {
-    public enum CostType
-    {
-        Unequivocal,
-        Ambiguous
-    }
-
     public class Cost : IComparable<Cost>
     {
         public int Row { get; set; }
         public int Column { get; set; }
         public int Value { get; set; }
-        public CostType Type { get; set; } = CostType.Unequivocal;
+        public Enums.CostType Type { get; set; } = Enums.CostType.Unequivocal;
 
         public int CompareTo(Cost other)
         {

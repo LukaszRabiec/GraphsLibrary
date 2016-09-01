@@ -2,12 +2,6 @@
 
 namespace GraphsLibrary.HungarianAlgorithmComponents
 {
-    public enum CoverType
-    {
-        Row,
-        Column
-    }
-
     public class Coverer
     {
         private readonly int[,] _matrixEnlarged;
@@ -171,11 +165,6 @@ namespace GraphsLibrary.HungarianAlgorithmComponents
             }
 
             return maxInCol;
-        }
-
-        private CoverType GetCoverType(int iteration)
-        {
-            return iteration % 2 == 0 ? CoverType.Row : CoverType.Column;
         }
 
         private int GetIndexOfRowWithMaximumZeros()

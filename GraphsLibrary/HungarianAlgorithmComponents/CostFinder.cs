@@ -80,7 +80,7 @@ namespace GraphsLibrary.HungarianAlgorithmComponents
                     cost.Value = _matrixOriginal[rowIndex, col];
                     if (zeroCounter > 1)
                     {
-                        cost.Type = CostType.Ambiguous;
+                        cost.Type = Enums.CostType.Ambiguous;
                     }
                     break;
                 }

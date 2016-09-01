@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using GraphsLibrary.GraphComponents;
+using GraphsLibrary.Utility;
 using Newtonsoft.Json;
 
 namespace GraphsLibrary
@@ -9,21 +11,28 @@ namespace GraphsLibrary
     public class Graph
     {
         public int[,] AdjacencyMatrix { get; }
+
         public int[,] AdjacencyMatrixCopy => DeepCopyOfMatrix(AdjacencyMatrix);
+
         public List<int> FreeVertices { get; }
+
         public List<Tuple<int, int>> MatchedVertices { get; }
+
+        public List<Edge> Edges { get; }
 
         public Graph(string jsonFilePath)
         {
             AdjacencyMatrix = GetGraphFromJsonFile(jsonFilePath);
             FreeVertices = new List<int>();
             MatchedVertices = new List<Tuple<int, int>>();
+            Edges = new List<Edge>();
         }
         public Graph(int[,] adjacencyMatrix)
         {
             AdjacencyMatrix = adjacencyMatrix;
             FreeVertices = new List<int>();
             MatchedVertices = new List<Tuple<int, int>>();
+            Edges = new List<Edge>();
         }
 
         public Graph(int[,] adjacencyMatrix, List<int> freeVertices, List<Tuple<int,int>> matchedVertices)
@@ -31,6 +40,22 @@ namespace GraphsLibrary
             AdjacencyMatrix = adjacencyMatrix;
             FreeVertices = new List<int>(freeVertices);
             MatchedVertices = new List<Tuple<int, int>>(matchedVertices);
+            Edges = new List<Edge>();
+        }
+
+        public void InitializeEdgesInUndirectedGraph(Enums.VerticesType verticesType)
+        {
+            var neighbourStartedId = verticesType == Enums.VerticesType.Cycle ? 0 : 1;
+
+            for (int vertice = 0; vertice < AdjacencyMatrix.GetLength(0); vertice++)
+            {
+                for (int neighbour = neighbourStartedId; neighbour < AdjacencyMatrix.GetLength(1); neighbour++)
+                {
+                    Edges.Add(new Edge(vertice, neighbour, AdjacencyMatrix[vertice, neighbour]));
+                }
+
+                neighbourStartedId++;
+            }
         }
 
         private int[,] DeepCopyOfMatrix(int[,] sourceMatrix)

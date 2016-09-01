@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
 using GraphsLibrary.HungarianAlgorithmComponents;
+using GraphsLibrary.Utility;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -132,7 +133,7 @@ namespace GraphsLibrary.Tests
                     Column = 0,
                     Row = 0,
                     Value = 1,
-                    Type = CostType.Ambiguous
+                    Type = Enums.CostType.Ambiguous
                 },
                 new Cost
                 {
