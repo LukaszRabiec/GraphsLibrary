@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Text;
 
-namespace GraphsLibrary.HungarianAlgorithmHelpers
+namespace GraphsLibrary.HungarianAlgorithmComponents
 {
     public enum CostType
     {
@@ -41,7 +40,6 @@ namespace GraphsLibrary.HungarianAlgorithmHelpers
         public override string ToString()
         {
             string resultString = default(string);
-            var stringBuilder = new StringBuilder();
             var type = GetType();
             var properties = type.GetProperties();
 

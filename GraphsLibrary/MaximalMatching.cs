@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using GraphsLibrary.MaximalMatchingBuilders;
+using GraphsLibrary.MaximalMatchingComponents;
+using GraphsLibrary.Utility;
 
 namespace GraphsLibrary
 {

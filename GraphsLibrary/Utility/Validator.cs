@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GraphsLibrary
+namespace GraphsLibrary.Utility
 {
     public static class Validator
     {

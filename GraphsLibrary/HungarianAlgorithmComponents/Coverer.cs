@@ -1,4 +1,6 @@
-﻿namespace GraphsLibrary.HungarianAlgorithmHelpers
+﻿using GraphsLibrary.Utility;
+
+namespace GraphsLibrary.HungarianAlgorithmComponents
 {
     public enum CoverType
     {

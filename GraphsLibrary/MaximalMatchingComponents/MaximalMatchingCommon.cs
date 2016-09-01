@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GraphsLibrary.MaximalMatchingBuilders
+namespace GraphsLibrary.MaximalMatchingComponents
 {
     public static class MaximalMatchingCommon
     {

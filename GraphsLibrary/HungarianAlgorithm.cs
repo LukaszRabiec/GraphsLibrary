@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using GraphsLibrary.HungarianAlgorithmHelpers;
+using GraphsLibrary.HungarianAlgorithmComponents;
+using GraphsLibrary.Utility;
 
 namespace GraphsLibrary
 {

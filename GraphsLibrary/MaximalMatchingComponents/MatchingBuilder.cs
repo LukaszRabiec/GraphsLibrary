@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using MMC = GraphsLibrary.MaximalMatchingBuilders.MaximalMatchingCommon;
+using GraphsLibrary.Utility;
+using MMC = GraphsLibrary.MaximalMatchingComponents.MaximalMatchingCommon;
 
-namespace GraphsLibrary.MaximalMatchingBuilders
+namespace GraphsLibrary.MaximalMatchingComponents
 {
     public class MatchingBuilder
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using GraphsLibrary.Utility;
 
-namespace GraphsLibrary.HungarianAlgorithmHelpers
+namespace GraphsLibrary.HungarianAlgorithmComponents
 {
     public class CostFinder
     {

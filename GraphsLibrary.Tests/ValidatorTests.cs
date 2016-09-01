@@ -1,5 +1,6 @@
 ﻿using System;
 using FluentAssertions;
+using GraphsLibrary.Utility;
 using Xunit;
 
 namespace GraphsLibrary.Tests

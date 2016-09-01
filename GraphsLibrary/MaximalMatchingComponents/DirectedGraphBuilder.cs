@@ -1,4 +1,6 @@
-﻿namespace GraphsLibrary.MaximalMatchingBuilders
+﻿using GraphsLibrary.Utility;
+
+namespace GraphsLibrary.MaximalMatchingComponents
 {
     public class DirectedGraphBuilder
     {

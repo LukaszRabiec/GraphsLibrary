@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FluentAssertions;
-using GraphsLibrary.MaximalMatchingBuilders;
+using GraphsLibrary.MaximalMatchingComponents;
 using Xunit;
 using Xunit.Abstractions;
 

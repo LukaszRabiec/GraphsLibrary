@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using GraphsLibrary.HungarianAlgorithmHelpers;
+using GraphsLibrary.HungarianAlgorithmComponents;
 using Xunit;
 using Xunit.Abstractions;
 
