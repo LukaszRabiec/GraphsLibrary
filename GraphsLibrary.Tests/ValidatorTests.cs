@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using FluentAssertions;
+using GraphsLibrary.GraphComponents;
 using GraphsLibrary.Utility;
 using Xunit;
 
@@ -181,6 +183,40 @@ namespace GraphsLibrary.Tests
             var graph = new Graph(_dirPath + "v1GraphWithEulerCycle.json");
 
             Validator.AreNeighbours(0, 1, graph.AdjacencyMatrix).Should().BeTrue();
+        }
+
+        [Fact]
+        public void EdgesWithCycledVerticesShouldThrowArgumentException()
+        {
+            var edges = new List<Edge>
+            {
+                new Edge(0, 1, 30),
+                new Edge(1, 1, 12)
+            };
+
+            Action validatingEdgesWithCycledVertices = () =>
+            {
+                Validator.ValidateIfEdgesHaveUncycledVertices(edges);
+            };
+
+            validatingEdgesWithCycledVertices.ShouldThrow<ArgumentException>();
+        }
+
+        [Fact]
+        public void EdgesWithUnycledVerticesShouldNotThrowArgumentException()
+        {
+            var edges = new List<Edge>
+            {
+                new Edge(0, 1, 30),
+                new Edge(1, 2, 12)
+            };
+
+            Action validatingEdgesWithUncycledVertices = () =>
+            {
+                Validator.ValidateIfEdgesHaveUncycledVertices(edges);
+            };
+
+            validatingEdgesWithUncycledVertices.ShouldNotThrow<ArgumentException>();
         }
     }
 }

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using GraphsLibrary.GraphComponents;
 
 namespace GraphsLibrary.Utility
 {
@@ -96,6 +99,14 @@ namespace GraphsLibrary.Utility
         public static bool AreNeighbours(int vertice, int neighbour, int[,] adjacencyMatrix)
         {
             return adjacencyMatrix[vertice, neighbour] == 1;
+        }
+
+        public static void ValidateIfEdgesHaveUncycledVertices(List<Edge> edges)
+        {
+            if (edges.Any(edge => edge.Vertice1 == edge.Vertice2))
+            {
+                throw new ArgumentException("You must specified edges with uncycled vertices.");
+            }
         }
     }
 }
