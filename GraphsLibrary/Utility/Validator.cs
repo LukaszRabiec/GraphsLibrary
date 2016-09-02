@@ -108,5 +108,16 @@ namespace GraphsLibrary.Utility
                 throw new ArgumentException("You must specified edges with uncycled vertices.");
             }
         }
+
+        public static void ValidateIfVerticesGraphAreUncycled(Graph graph)
+        {
+            for (int index = 0; index < graph.AdjacencyMatrix.GetLength(0); index++)
+            {
+                if (graph.AdjacencyMatrix[index, index] != 0)
+                {
+                    throw new ArgumentException("All vertices in graph must be uncycled.");
+                }
+            }
+        }
     }
 }

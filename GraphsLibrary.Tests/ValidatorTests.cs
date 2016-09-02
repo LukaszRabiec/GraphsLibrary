@@ -218,5 +218,31 @@ namespace GraphsLibrary.Tests
 
             validatingEdgesWithUncycledVertices.ShouldNotThrow<ArgumentException>();
         }
+
+        [Fact]
+        public void GraphWithUncycledVerticesShouldNotThrowArgumentException()
+        {
+            var graph = new Graph(_dirPath + "v1GraphWithUncycledVertices.json");
+
+            Action validatingUncycledVerticesInGraph = () =>
+            {
+                Validator.ValidateIfVerticesGraphAreUncycled(graph);
+            };
+
+            validatingUncycledVerticesInGraph.ShouldNotThrow<ArgumentException>();
+        }
+
+        [Fact]
+        public void GraphWithCycledVerticesShouldThrowArgumentException()
+        {
+            var graph = new Graph(_dirPath + "v1GraphWithCycledVertices.json");
+
+            Action validatingCycledVerticesInGraph = () =>
+            {
+                Validator.ValidateIfVerticesGraphAreUncycled(graph);
+            };
+
+            validatingCycledVerticesInGraph.ShouldThrow<ArgumentException>();
+        }
     }
 }
