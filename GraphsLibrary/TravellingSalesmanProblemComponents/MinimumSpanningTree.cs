@@ -4,7 +4,7 @@ using System.Text;
 using GraphsLibrary.GraphComponents;
 using GraphsLibrary.Utility;
 
-namespace GraphsLibrary.TravelingSalesmanProblemComponents
+namespace GraphsLibrary.TravellingSalesmanProblemComponents
 {
     public class MinimumSpanningTree
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GraphsLibrary.GraphComponents;
 
-namespace GraphsLibrary.TravelingSalesmanProblemComponents
+namespace GraphsLibrary.TravellingSalesmanProblemComponents
 {
     public class EdgesPriorityQueue
     {

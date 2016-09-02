@@ -109,6 +109,12 @@
     <None Include="TestsCorrectGraphsData\Salesman\v2GraphTreeMatrix.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="ValidatorGraphsData\v1GraphWithCycledVertices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ValidatorGraphsData\v1GraphWithUncycledVertices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ValidatorGraphsData\v1GraphDirectedIncorrectly.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

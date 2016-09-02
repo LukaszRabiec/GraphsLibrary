@@ -43,7 +43,7 @@ namespace GraphsLibrary
             Edges = new List<Edge>();
         }
 
-        public void InitializeEdgesInUndirectedGraph(Enums.VerticesType verticesType)
+        public List<Edge> InitializeEdgesInUndirectedGraph(Enums.VerticesType verticesType)
         {
             var neighbourStartedId = verticesType == Enums.VerticesType.Cycle ? 0 : 1;
 
@@ -56,6 +56,8 @@ namespace GraphsLibrary
 
                 neighbourStartedId++;
             }
+
+            return Edges;
         }
 
         private int[,] DeepCopyOfMatrix(int[,] sourceMatrix)

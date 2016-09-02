@@ -58,10 +58,11 @@
     <Compile Include="MaximalMatchingComponents\MaximalMatchingCommon.cs" />
     <Compile Include="MaximalMatchingComponents\ExtensionPathBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TravelingSalesmanProblem.cs" />
+    <Compile Include="TravellingSalesmanProblem.cs" />
     <Compile Include="GraphComponents\Edge.cs" />
-    <Compile Include="TravelingSalesmanProblemComponents\EdgesPriorityQueue.cs" />
-    <Compile Include="TravelingSalesmanProblemComponents\MinimumSpanningTree.cs" />
+    <Compile Include="TravellingSalesmanProblemComponents\DepthFirstSearch.cs" />
+    <Compile Include="TravellingSalesmanProblemComponents\EdgesPriorityQueue.cs" />
+    <Compile Include="TravellingSalesmanProblemComponents\MinimumSpanningTree.cs" />
     <Compile Include="Utility\Enums.cs" />
     <Compile Include="Utility\Validator.cs" />
   </ItemGroup>
