@@ -71,6 +71,7 @@
     <Compile Include="HungarianAlgorithmTests.cs" />
     <Compile Include="MaximalMatchingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TravelingSalesmanProblemTests.cs" />
     <Compile Include="ValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +85,12 @@
     <None Include="SampleGraphsData\MaximalMatching\v2Graph.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="SampleGraphsData\Salesman\v2Graph.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SampleGraphsData\Salesman\v1Graph.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestsCorrectGraphsData\Hungarian\v1GraphCovered.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -94,6 +101,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestsCorrectGraphsData\MaximalMatching\v2GraphMaximalMatched.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestsCorrectGraphsData\Salesman\v1GraphTreeMatrix.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestsCorrectGraphsData\Salesman\v2GraphTreeMatrix.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ValidatorGraphsData\v1GraphDirectedIncorrectly.json">

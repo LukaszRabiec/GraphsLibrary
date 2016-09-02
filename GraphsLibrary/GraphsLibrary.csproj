@@ -61,6 +61,7 @@
     <Compile Include="TravelingSalesmanProblem.cs" />
     <Compile Include="GraphComponents\Edge.cs" />
     <Compile Include="TravelingSalesmanProblemComponents\EdgesPriorityQueue.cs" />
+    <Compile Include="TravelingSalesmanProblemComponents\MinimumSpanningTree.cs" />
     <Compile Include="Utility\Enums.cs" />
     <Compile Include="Utility\Validator.cs" />
   </ItemGroup>
