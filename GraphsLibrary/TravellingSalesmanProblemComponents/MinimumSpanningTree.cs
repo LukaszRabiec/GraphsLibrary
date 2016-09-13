@@ -10,7 +10,7 @@ namespace GraphsLibrary.TravellingSalesmanProblemComponents
     {
         public int[,] TreeMatrix { get; private set; }
 
-        private bool[] _verticeVisited;
+        private bool[] _visitedVertices;
 
         public MinimumSpanningTree(int startedVertice, int numberOfVertices, List<Edge> edges)
         {
@@ -22,18 +22,18 @@ namespace GraphsLibrary.TravellingSalesmanProblemComponents
         private void InitializeTree(int numberOfVertices)
         {
             TreeMatrix = new int[numberOfVertices, numberOfVertices];
-            _verticeVisited = new bool[numberOfVertices];
+            _visitedVertices = new bool[numberOfVertices];
 
             for (int index = 0; index < numberOfVertices; index++)
             {
-                _verticeVisited[index] = false;
+                _visitedVertices[index] = false;
             }
         }
 
         private void CreateTree(int startedVertice, int numberOfVertices, List<Edge> edges)
         {
             var vertice = startedVertice;
-            _verticeVisited[vertice] = true;
+            _visitedVertices[vertice] = true;
             var priorityQueue = new EdgesPriorityQueue();
 
             // Do for all other vertices (without 'startedVertice') ['i' is iterator, not vertice index]
@@ -44,7 +44,7 @@ namespace GraphsLibrary.TravellingSalesmanProblemComponents
 
                 AddIncidentEdgesToPriorityQueue(incidentEdges, priorityQueue);
 
-                var edge = DequeuingEdgesWhileVertice2Visited(priorityQueue);
+                var edge = DequeuingEdgesWhileVertice2IsNotVisited(priorityQueue);
 
                 AddEdgeToTreeMatrix(edge);
                 SetVerticeAsVisited(edge.Vertice2);
@@ -79,7 +79,7 @@ namespace GraphsLibrary.TravellingSalesmanProblemComponents
         {
             foreach (var incidentEdge in incidentEdges)
             {
-                if (!_verticeVisited[incidentEdge.Vertice2])
+                if (!_visitedVertices[incidentEdge.Vertice2])
                 {
                     var edge = new Edge(incidentEdge.Vertice1, incidentEdge.Vertice2, incidentEdge.Cost);
                     priorityQueue.Enqueue(edge);
@@ -87,13 +87,13 @@ namespace GraphsLibrary.TravellingSalesmanProblemComponents
             }
         }
 
-        private Edge DequeuingEdgesWhileVertice2Visited(EdgesPriorityQueue priorityQueue)
+        private Edge DequeuingEdgesWhileVertice2IsNotVisited(EdgesPriorityQueue priorityQueue)
         {
             Edge edge;
             do
             {
                 edge = priorityQueue.Dequeue();
-            } while (_verticeVisited[edge.Vertice2]);
+            } while (_visitedVertices[edge.Vertice2]);
 
             return edge;
         }
@@ -106,7 +106,7 @@ namespace GraphsLibrary.TravellingSalesmanProblemComponents
 
         private void SetVerticeAsVisited(int vertice)
         {
-            _verticeVisited[vertice] = true;
+            _visitedVertices[vertice] = true;
         }
 
         public override string ToString()
